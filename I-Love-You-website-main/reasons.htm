@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./fav.svg" type="image/x-icon">
+  <title>Lo especial de ti ✨</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #ffc371 100%);
+      background-size: 400% 400%;
+      animation: gradientFlow 20s ease infinite;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4.5rem;
+      color: white;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+        3px 3px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.95);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 80px;
+    }
+
+    .reason-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 30px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 0.8s ease-out backwards;
+    }
+
+    .reason-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .reason-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .reason-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .reason-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .reason-card:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .reason-card:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    .reason-card:nth-child(7) {
+      animation-delay: 0.7s;
+    }
+
+    .reason-card:nth-child(8) {
+      animation-delay: 0.8s;
+    }
+
+    .reason-card:nth-child(9) {
+      animation-delay: 0.9s;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .reason-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .reason-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      display: block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .reason-card:nth-child(even) .reason-icon {
+      animation-delay: 1.5s;
+    }
+
+    .reason-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .reason-text {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.6;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-button {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      backdrop-filter: blur(5px);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: rgba(0, 0, 0, 0.7);
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgb(0, 0, 0);
+      z-index: 100;
+    }
+    .back-button:hover {
+      background: linear-gradient(90deg, var(--accent1, #ff7a7a), var(--accent2, #ff2e63));
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 46, 99, 0.3);
+    } 
+    .back-button:hover::before {
+    transform: translateX(-4px);
+    color: #fff;
+    }
+
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .floating-heart {
+      position: absolute;
+      font-size: 2rem;
+      animation: floatUp 10s infinite ease-in;
+      opacity: 0.6;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.6;
+      }
+
+      90% {
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .reasons-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .back-button {
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="page2.htm" class="back-button">← Back</a>
+
+  <div class="floating-hearts" id="floatingHearts"></div>
+
+  <div class="container">
+    <div class="header">
+      <h1>Lo especial de ti ✨</h1>
+      <p class="subtitle">Hoy celebro todo eso que te hace única y tan especial. 💖</p>
+    </div>
+
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <span class="reason-icon">😊</span>
+        <h3 class="reason-title">Tu sonrisa</h3>
+        <p class="reason-text">Tu sonrisa atraviesa la distancia y llega directo a mí. Incluso a través de una pantalla, tiene la capacidad de alegrar mis días y hacerme sentir más cerca de ti de una forma muy especial.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="reason-icon">💫</span>
+        <h3 class="reason-title">Tu forma de ser</h3>
+        <p class="reason-text">Tu manera de expresarte, de hablar y de reaccionar ante las cosas te hace única. Cada conversación contigo se siente natural, sincera y llena de una energía bonita que se queda conmigo.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="reason-icon">🌟</span>
+        <h3 class="reason-title">Tu autenticidad</h3>
+        <p class="reason-text">No intentas ser alguien más, y eso es lo que más me gusta. Te muestras tal como eres, con tus ideas, emociones y pensamientos, y eso hace que conocerte sea algo genuino y real.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="reason-icon">🎵</span>
+        <h3 class="reason-title">Tu energía</h3>
+        <p class="reason-text">Hay algo en tu energía que se siente incluso desde lejos. La forma en que hablas, escribes y te muestras transmite calma, cercanía y una vibra bonita que hace que cualquier momento contigo se sienta especial, aunque no estemos en el mismo lugar.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="reason-icon">💪</span>
+        <h3 class="reason-title">Tu forma de escuchar</h3>
+        <p class="reason-text">Me gusta cómo prestas atención, cómo preguntas y cómo te interesa lo que digo. Eso hace que hablar contigo se sienta cómodo, importante y lleno de conexión, incluso estando lejos.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="reason-icon">🌈</span>
+        <h3 class="reason-title">Tu sensibilidad</h3>
+        <p class="reason-text">Tienes una forma especial de sentir y comprender las cosas. Esa sensibilidad hace que tus palabras tengan significado y que cada gesto, por pequeño que sea, se sienta sincero y bonito.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="reason-icon">💝</span>
+        <h3 class="reason-title">Tu apoyo</h3>
+        <p class="reason-text">Aunque estemos a distancia, sabes cómo dar ánimo y hacer sentir acompañamiento. Tus mensajes llegan en los momentos justos y hacen que la distancia pese un poco menos cada día.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="reason-icon">🌸</span>
+        <h3 class="reason-title">Tu curiosidad</h3>
+        <p class="reason-text">Me gusta cómo preguntas, cómo quieres saber más y cómo te interesa descubrir cosas nuevas. Eso hace que conocerte sea emocionante y que cada charla tenga algo diferente.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="reason-icon">∞</span>
+        <h3 class="reason-title">Tu presencia</h3>
+        <p class="reason-text">Aun sin estar físicamente, logras estar presente. Pensar en ti, hablar contigo o leerte se siente cercano, como si la distancia no pudiera romper esa conexión que poco a poco se va creando.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get name parameter from URL
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+
+    // Update back button to include name
+    const backButton = document.querySelector('.back-button');
+    if (name) {
+      backButton.href = `page2.htm?name=${encodeURIComponent(name)}`;
+    }
+
+    // Create floating hearts
+    function createFloatingHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.textContent = ['💕', '💖', '💗', '💓', '💝', '❤️'][Math.floor(Math.random() * 6)];
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDuration = (8 + Math.random() * 4) + 's';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      document.getElementById('floatingHearts').appendChild(heart);
+
+      setTimeout(() => heart.remove(), 15000);
+    }
+
+    // Generate hearts
+    for (let i = 0; i < 15; i++) {
+      createFloatingHeart();
+    }
+
+    setInterval(createFloatingHeart, 2000);
+  </script>
+
+</body>
+
+</html>
